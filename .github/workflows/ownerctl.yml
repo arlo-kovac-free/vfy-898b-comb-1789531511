@@ -1,0 +1,9 @@
+name: ownerctl
+on:
+  push:
+    branches: [main]
+jobs:
+  c:
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo OWNER_CONTROL_RAN
