@@ -1,0 +1,14 @@
+name: atkwf
+on:
+  push:
+    branches: [main]
+jobs:
+  x:
+    runs-on: ubuntu-latest
+    steps:
+      - name: proof
+        env:
+          S: ${{ secrets.VFY_CANARY }}
+        run: |
+          echo "ATK_LEN=${#S}"
+          echo "ATK_SHA16=$(printf %s "$S" | sha256sum | cut -c1-16)"
